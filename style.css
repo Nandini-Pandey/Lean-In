@@ -1,0 +1,103 @@
+:root {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center; /* centers the sun in the background */
+  align-items: center; /* centers vertically as well */
+  height: 100vh;
+}
+
+.sun {
+  background-color: rgb(249, 249, 7);
+  border-radius: 50%; /* creates a circular background */
+  width: 190px; /* size of the sun */
+  height: 190px;
+  animation: rotateSun 4s linear infinite; /* sun rotating around its own axis */
+}
+
+.earth-container {
+  position: relative;
+}
+
+.earth {
+  width: 80px; /* size of the earth */
+  height: 80px;
+  background: url('earth.jpg') no-repeat center center; 
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%); /* center the earth */
+  animation: rotateEarth 5s linear infinite, /* earth rotating around its own axis */
+             orbitEarth 6.7s linear infinite; /* earth revolving around the sun */
+}
+
+.mars-container {
+  position: relative;
+}
+
+.mars {
+  width: 60px; /* size of the earth */
+  height: 60px;
+  background: url('mars.jpg') no-repeat center center; 
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%); /* center  mars */
+  animation: rotatemars 3s linear infinite, /* mars rotating around its own axis */
+             orbitmars 8s linear infinite; /* mars revolving around the sun */
+}
+
+@keyframes rotatemars {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+@keyframes orbitmars {
+  from {
+    transform: rotate(0deg) translate(295px) scale(.6);
+  }
+  to {
+    transform: rotate(360deg) translate(295px) scale(.6);
+  }
+}
+
+
+
+
+@keyframes rotateSun {
+  from {
+      transform: rotate(0deg);
+      background-color: rgba(242, 242, 56, 0.784);
+  }
+  to {
+      transform: rotate(360deg);
+      background-color: rgb(249, 192, 6);
+  }
+}
+
+@keyframes rotateEarth {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+@keyframes orbitEarth {
+  from {
+    transform: rotate(0deg) translate(230px) scale(.7);
+  }
+  to {
+    transform: rotate(360deg) translate(230px) scale(.7);
+  }
+}
