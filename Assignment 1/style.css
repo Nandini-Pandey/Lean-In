@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background-color: #87CEEB; /* Sky blue background */
+    overflow: hidden;
+}
+
+.cloud {
+    width: 200px;
+    height: 100px;
+    background-color: #fff; /* White color for the cloud */
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    left: 50%; /* Center the clouds horizontally */
+    transform: translateX(-50%);
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    top: -30px;
+    left: 50px;
+}
+
+.cloud::after {
+    top: -10px;
+    left: 90px;
+}
+
+.rain {
+    position: absolute;
+    width: 2px;
+    height: 100vh;
+    background-color: #000; /* Black color for raindrops */
+    animation: rainAnimation 0.5s linear infinite;
+}
+
+@keyframes rainAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100vh);
+    }
+}
